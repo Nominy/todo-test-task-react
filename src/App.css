@@ -107,7 +107,7 @@ body {
   border-bottom: 1px solid #ededed;
   display: flex;
   align-items: center;
-  padding: 15px 15px 15px 60px;
+  padding: 15px 60px 15px 60px; /* Add right padding for delete button */
   height: 60px;
   word-wrap: break-word;
   transition: background-color 0.2s;
@@ -126,6 +126,7 @@ body {
   display: flex;
   align-items: center;
   flex: 1;
+  min-width: 0; /* Allow flexbox to shrink properly */
 }
 
 .todo-checkbox {
@@ -161,12 +162,14 @@ body {
 }
 
 .todo-text {
-  line-height: 1.2;
+  line-height: 1.4;
   transition: color 0.3s ease, text-decoration 0.3s ease;
   flex: 1;
   margin-left: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap; /* Prevent text wrapping */
+  min-width: 0; /* Allow text to shrink properly */
 }
 
 .delete-button {
